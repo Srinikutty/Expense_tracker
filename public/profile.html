@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Profile · Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="navbar.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-brand">Finance Tracker</a>
+      <button type="button" class="navbar-toggle" id="navbar-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="navbar-menu" id="navbar-menu">
+        <a href="/" class="nav-link" data-nav="dashboard">Dashboard</a>
+        <a href="/profile.html" class="nav-link" data-nav="profile">Profile</a>
+        <button type="button" class="nav-link nav-btn" id="logout-btn">Sign out</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container profile-page">
+    <header class="header">
+      <h1>Profile</h1>
+      <p>Manage your photo, account details, and password.</p>
+    </header>
+
+    <section class="card profile-section">
+      <h2>Profile image</h2>
+      <div class="profile-avatar-row">
+        <div class="profile-avatar-wrap">
+          <img id="profile-avatar-img" class="profile-avatar-img" alt="Your profile photo" hidden />
+          <div id="profile-avatar-initials" class="profile-avatar-initials" aria-hidden="true"></div>
+        </div>
+        <div class="profile-avatar-actions">
+          <input type="file" id="avatar-input" accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+          <button type="button" class="primary-btn" id="avatar-upload-btn">Upload photo</button>
+          <button type="button" class="profile-btn-secondary" id="avatar-remove-btn" hidden>Remove photo</button>
+          <p class="profile-hint">JPG, PNG, or WebP. Max 2 MB.</p>
+          <p id="avatar-message" class="profile-feedback" role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card profile-section">
+      <h2>Email</h2>
+      <div class="profile-readonly">
+        <p id="profile-email" class="profile-value">—</p>
+        <p class="profile-hint">Your sign-in email. Contact support to change it.</p>
+      </div>
+    </section>
+
+    <section class="card profile-section">
+      <h2>User ID</h2>
+      <div class="profile-id-row">
+        <code id="profile-id" class="profile-id-value">—</code>
+        <button type="button" class="profile-btn-secondary" id="copy-id-btn">Copy</button>
+      </div>
+      <p class="profile-hint">Unique account identifier used by the app.</p>
+      <p id="copy-id-message" class="profile-feedback" role="status"></p>
+    </section>
+
+    <section class="card profile-section">
+      <h2>Change password</h2>
+      <form id="password-form" class="profile-form" novalidate>
+        <div class="form-group">
+          <label for="new-password">New password</label>
+          <input type="password" id="new-password" name="new-password" autocomplete="new-password" minlength="6" required />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm new password</label>
+          <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" minlength="6" required />
+        </div>
+        <p id="password-message" class="profile-feedback" role="status"></p>
+        <button type="submit" class="primary-btn" id="password-submit-btn">Update password</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="session.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

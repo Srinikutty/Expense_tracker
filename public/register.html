@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register · Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <span class="badge">Finance Tracker</span>
+    <h1>Create account</h1>
+    <p>Register to start tracking your personal finances securely.</p>
+
+    <div id="auth-error" class="auth-error" role="alert"></div>
+    <div id="auth-success" class="auth-success" role="status"></div>
+
+    <form id="register-form" class="auth-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 6 characters" minlength="6" required />
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm password</label>
+        <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" placeholder="Repeat password" minlength="6" required />
+      </div>
+      <button type="submit" class="primary-btn" id="submit-btn">Create account</button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account? <a href="/login.html">Sign in</a>
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auth-pages.js"></script>
+  <script>
+    initAuthPage('register');
+  </script>
+</body>
+</html>
