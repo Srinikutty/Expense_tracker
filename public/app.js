@@ -11,24 +11,24 @@ const EXPENSE_CATEGORIES = ['Food', 'Utilities', 'Shopping', 'Transport', 'Other
 const INCOME_CATEGORIES = ['Salary', 'Freelance', 'Investment', 'Gift', 'Other'];
 
 const CHART_THEME = {
-  text: '#5c6b7a',
-  axis: '#e2ddd4',
-  split: '#f0ebe3',
-  monthly: ['#0d9488', '#14b8a6'],
-  daily: '#2563eb',
-  income: '#059669',
-  expense: '#dc2626'
+  text: '#374151',
+  axis: '#D1D5DB',
+  split: '#E8F7F4',
+  monthly: ['#F59E0B', '#2BB6A6'],
+  daily: '#FDBA74',
+  income: '#2BB6A6',
+  expense: '#F59E0B'
 };
 
 const PIE_COLORS = [
-  '#0d9488',
-  '#2563eb',
-  '#dc2626',
-  '#d97706',
-  '#7c3aed',
-  '#db2777',
-  '#0891b2',
-  '#65a30d'
+  '#F59E0B',
+  '#FDBA74',
+  '#2BB6A6',
+  '#1F9E89',
+  '#FEE3B6',
+  '#DCF3EF',
+  '#0F766E',
+  '#FFC77D'
 ];
 
 const formatCurrency = (value) =>
@@ -316,8 +316,8 @@ function updateMonthlyChartSeries() {
 function chartTooltip() {
   return {
     backgroundColor: 'rgba(255, 255, 255, 0.98)',
-    borderColor: '#e2ddd4',
-    textStyle: { color: '#1a2332' }
+    borderColor: 'rgba(209, 213, 219, 0.9)',
+    textStyle: { color: '#374151' }
   };
 }
 
@@ -411,6 +411,8 @@ function renderOverallPieChart(expenses) {
           orient: 'vertical',
           right: 0,
           top: 'center',
+          itemWidth: 12,
+          itemHeight: 12,
           textStyle: { color: CHART_THEME.text }
         },
     series: [

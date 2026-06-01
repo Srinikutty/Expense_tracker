@@ -8,39 +8,45 @@
 
 :root {
 
-  --bg: #f4f1ec;
+  --bg: #F4F7F6;
 
-  --bg-accent: #e8f5ef;
+  --bg-accent: rgba(43, 182, 166, 0.12);
 
-  --surface: #ffffff;
+  --surface: #FFFFFF;
 
-  --surface-muted: #faf8f5;
+  --surface-muted: #D6F4F0;
 
-  --text: #1a2332;
+  --text: #374151;
 
-  --muted: #5c6b7a;
+  --muted: #6B7280;
 
-  --border: #e2ddd4;
+  --border: #D1D5DB;
 
-  --accent: #0d9488;
+  --accent: #F59E0B;
 
-  --accent-hover: #0f766e;
+  --accent-hover: #D97706;
 
-  --income: #059669;
+  --accent-soft: #FDBA74;
 
-  --income-bg: #ecfdf5;
+  --secondary: #2BB6A6;
 
-  --expense: #dc2626;
+  --secondary-bg: rgba(43, 182, 166, 0.12);
 
-  --expense-bg: #fef2f2;
+  --income: #2BB6A6;
 
-  --total: #2563eb;
+  --income-bg: rgba(43, 182, 166, 0.12);
 
-  --total-bg: #eff6ff;
+  --expense: #F59E0B;
 
-  --shadow: 0 4px 24px rgba(26, 35, 50, 0.06);
+  --expense-bg: rgba(245, 158, 11, 0.12);
 
-  --shadow-lg: 0 12px 40px rgba(26, 35, 50, 0.1);
+  --total: #2BB6A6;
+
+  --total-bg: rgba(43, 182, 166, 0.12);
+
+  --shadow: 0 14px 50px rgba(55, 65, 81, 0.08);
+
+  --shadow-lg: 0 20px 80px rgba(55, 65, 81, 0.12);
 
   --radius: 16px;
 
@@ -74,9 +80,9 @@ body {
 
   background:
 
-    radial-gradient(ellipse 80% 50% at 100% 0%, var(--bg-accent), transparent),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 34%),
 
-    radial-gradient(ellipse 60% 40% at 0% 100%, #fef3e8, transparent),
+    radial-gradient(circle at bottom left, rgba(43, 182, 166, 0.12), transparent 32%),
 
     var(--bg);
 
@@ -113,10 +119,46 @@ body {
 
 
 .header {
-
   margin-bottom: 28px;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-text h1 {
+  margin: 8px 0;
+}
+
+.header-illustration {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: none;
+}
+
+.chart-illustration {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.15));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
 
 
 
@@ -484,7 +526,40 @@ button:hover {
 
   gap: 6px;
 
+  position: relative;
+
 }
+
+.tile-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.summary-tile.income .tile-icon {
+  background: rgba(43, 182, 166, 0.15);
+  color: var(--income);
+}
+
+.summary-tile.expense .tile-icon {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--expense);
+}
+
+.summary-tile.total .tile-icon {
+  background: rgba(43, 182, 166, 0.15);
+  color: var(--total);
+}
+
+.tile-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
 
 
 
@@ -586,7 +661,40 @@ button:hover {
 
 }
 
+.charts-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
 
+.charts-header h2 {
+  margin: 0;
+}
+
+.charts-header-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.transactions-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transactions-header h2 {
+  margin: 0;
+}
+
+.transactions-header-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
 
 .charts-card > h2 {
 
@@ -1120,6 +1228,11 @@ button:hover {
 
   }
 
+  .header-illustration {
+    width: 100px;
+    height: 100px;
+  }
+
 }
 
 
@@ -1145,7 +1258,18 @@ button:hover {
   .header {
 
     margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
 
+  }
+
+  .header-content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-illustration {
+    display: none;
   }
 
 
@@ -1394,6 +1518,11 @@ button:hover {
 
   }
 
+  .header-illustration {
+    display: flex;
+  }
+
+
 }
 
 
@@ -1406,6 +1535,10 @@ button:hover {
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
+  }
+
+  .header-illustration {
+    display: flex;
   }
 
 }

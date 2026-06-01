@@ -1,11 +1,54 @@
 .auth-page {
+  position: relative;
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 24px 16px;
+  background: linear-gradient(180deg, rgba(244, 247, 246, 1) 0%, rgba(255, 255, 255, 0.98) 100%);
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.18), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(43, 182, 166, 0.14), transparent 22%),
+    radial-gradient(circle at 20% 30%, rgba(79, 70, 229, 0.12), transparent 18%);
+  opacity: 0.85;
+  pointer-events: none;
+  animation: authGlow 20s ease-in-out infinite alternate;
+}
+
+.auth-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 120%;
+  height: 120%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F59E0B' stop-opacity='0.24'/%3E%3Cstop offset='1' stop-color='%232BB6A6' stop-opacity='0.08'/%3E%3C/linearGradient%3E%3ClinearGradient id='grad2' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%234F46E5' stop-opacity='0.28'/%3E%3Cstop offset='1' stop-color='%230A58CA' stop-opacity='0.12'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='none'/%3E%3Cpath d='M120 420 L220 320 L320 360 L420 260 L520 300 L620 220 L720 260' fill='none' stroke='%234F46E5' stroke-width='14' stroke-linecap='round' stroke-linejoin='round' opacity='0.32'/%3E%3Cpath d='M120 430 L220 330 L320 370 L420 270 L520 310 L620 230 L720 270' fill='none' stroke='%23F59E0B' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' opacity='0.2'/%3E%3Crect x='140' y='120' width='200' height='140' rx='24' fill='url(%23grad2)' opacity='0.16'/%3E%3Crect x='460' y='80' width='240' height='160' rx='24' fill='url(%23grad1)' opacity='0.14'/%3E%3Crect x='170' y='160' width='140' height='60' rx='12' fill='%23FFFFFF' opacity='0.38'/%3E%3Crect x='490' y='120' width='160' height='50' rx='12' fill='%23FFFFFF' opacity='0.32'/%3E%3Ccircle cx='760' cy='460' r='42' fill='%23F59E0B' opacity='0.16'/%3E%3Cpath d='M740 470 L760 450 L780 470' fill='none' stroke='%23F59E0B' stroke-width='8' opacity='0.28'/%3E%3Cpath d='M420 360 L470 290 L530 330 L580 250' fill='none' stroke='%232BB6A6' stroke-width='12' stroke-linecap='round' opacity='0.22'/%3E%3Ccircle cx='220' cy='180' r='8' fill='%23FFFFFF' opacity='0.5'/%3E%3Ccircle cx='280' cy='210' r='8' fill='%23FFFFFF' opacity='0.5'/%3E%3Ccircle cx='540' cy='140' r='8' fill='%23FFFFFF' opacity='0.5'/%3E%3C/svg%3E") no-repeat center/contain;
+  opacity: 0.15;
+  transform: translateX(-8%) scale(1.08);
+  filter: blur(1px);
+  pointer-events: none;
+  animation: authDrift 28s ease-in-out infinite;
+}
+
+@keyframes authGlow {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-10px) scale(1.02); }
+}
+
+@keyframes authDrift {
+  from { transform: translateX(-8%) translateY(0) scale(1.08); }
+  to { transform: translateX(8%) translateY(-12px) scale(1.08); }
 }
 
 .auth-card {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 420px;
   background: var(--surface);
@@ -13,6 +56,31 @@
   border-radius: var(--radius-lg);
   padding: 32px 28px;
   box-shadow: var(--shadow-lg);
+}
+
+.auth-badge {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, 0.14);
+  color: #1f2937;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(79, 70, 229, 0.22);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  animation: badgeFloat 6s ease-in-out infinite;
+}
+
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .auth-card h1 {
