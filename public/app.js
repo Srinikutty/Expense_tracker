@@ -11,24 +11,24 @@ const EXPENSE_CATEGORIES = ['Food', 'Utilities', 'Shopping', 'Transport', 'Other
 const INCOME_CATEGORIES = ['Salary', 'Freelance', 'Investment', 'Gift', 'Other'];
 
 const CHART_THEME = {
-  text: '#374151',
-  axis: '#D1D5DB',
-  split: '#E8F7F4',
-  monthly: ['#F59E0B', '#2BB6A6'],
-  daily: '#FDBA74',
-  income: '#2BB6A6',
-  expense: '#F59E0B'
+  text: '#4B4677',
+  axis: '#DED9F7',
+  split: '#F0EEFC',
+  monthly: ['#7147F5', '#F27B9B'],
+  daily: '#9D83FF',
+  income: '#7147F5',
+  expense: '#F27B9B'
 };
 
 const PIE_COLORS = [
-  '#F59E0B',
-  '#FDBA74',
-  '#2BB6A6',
-  '#1F9E89',
-  '#FEE3B6',
-  '#DCF3EF',
-  '#0F766E',
-  '#FFC77D'
+  '#7147F5',
+  '#9D83FF',
+  '#F27B9B',
+  '#B19CFF',
+  '#FFB0C6',
+  '#CFC4FF',
+  '#4936B7',
+  '#E2DCFF'
 ];
 
 const formatCurrency = (value) =>
@@ -590,7 +590,7 @@ function renderDailyChart(expenses) {
         data: data.map((d) => d.income),
         lineStyle: { width: 2.5, color: CHART_THEME.income },
         itemStyle: { color: CHART_THEME.income },
-        areaStyle: { color: 'rgba(5, 150, 105, 0.1)' }
+        areaStyle: { color: 'rgba(113, 71, 245, 0.1)' }
       },
       {
         name: 'Expense',
@@ -602,7 +602,7 @@ function renderDailyChart(expenses) {
         data: data.map((d) => d.expense),
         lineStyle: { width: 2.5, color: CHART_THEME.expense },
         itemStyle: { color: CHART_THEME.expense },
-        areaStyle: { color: 'rgba(220, 38, 38, 0.08)' }
+        areaStyle: { color: 'rgba(242, 123, 155, 0.1)' }
       }
     ]
   });

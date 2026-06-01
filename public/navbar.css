@@ -16,6 +16,7 @@ body:has(.navbar) {
     max(20px, env(safe-area-inset-right))
     0
     max(20px, env(safe-area-inset-left));
+  animation: navbarEnter 0.45s ease-out both;
 }
 
 .navbar-inner {
@@ -72,12 +73,13 @@ body:has(.navbar) {
   background: transparent;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.2s ease;
 }
 
 .nav-link:hover {
   background: var(--surface-muted);
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 .nav-link.active {
@@ -97,6 +99,18 @@ body:has(.navbar) {
 
 .profile-section {
   max-width: 560px;
+}
+
+.profile-section:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+
+.profile-section:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+
+.profile-section:nth-of-type(4) {
+  animation-delay: 0.24s;
 }
 
 .profile-section h2 {
@@ -256,6 +270,7 @@ body:has(.navbar) {
 
   .navbar-menu.open {
     display: flex;
+    animation: menuDropIn 0.24s ease-out both;
   }
 
   .navbar-inner {
@@ -266,5 +281,198 @@ body:has(.navbar) {
   .nav-link {
     justify-content: center;
     width: 100%;
+  }
+}
+
+@keyframes navbarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desktop sidebar inspired by the dashboard reference */
+body:has(.navbar) {
+  padding-top: 28px;
+}
+
+.navbar {
+  top: 24px;
+  bottom: 24px;
+  left: 24px;
+  right: auto;
+  width: 188px;
+  padding: 20px 14px;
+  color: #fff;
+  background: linear-gradient(160deg, #8c4df9 0%, #6b3de9 48%, #5831d6 100%);
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 22px 48px rgba(95, 58, 210, 0.26);
+  animation: sidebarEnter 0.55s ease-out both;
+}
+
+.navbar-inner {
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.navbar-brand {
+  gap: 9px;
+  align-items: center;
+  display: flex;
+  padding: 4px 6px 22px;
+  color: #fff;
+  font-size: 0.93rem;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: #7147f5;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.navbar-menu {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-link {
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 11px 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+}
+
+.nav-icon {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.62rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 7px;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-link.nav-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.sidebar-note {
+  display: grid;
+  gap: 7px;
+  margin-top: auto;
+  padding: 14px 12px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+}
+
+.sidebar-note strong {
+  font-size: 0.78rem;
+}
+
+.sidebar-note span {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+@keyframes sidebarEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  body:has(.navbar) {
+    padding-top: calc(76px + env(safe-area-inset-top, 0px));
+  }
+
+  .navbar {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: env(safe-area-inset-top, 0) 16px 0;
+    border-radius: 0 0 18px 18px;
+    animation: navbarEnter 0.45s ease-out both;
+  }
+
+  .navbar-inner {
+    min-height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  .navbar-toggle {
+    display: grid;
+    width: auto;
+    min-width: 58px;
+    height: 38px;
+    place-items: center;
+    color: #fff;
+    font-size: 0.72rem;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .navbar-menu {
+    background: linear-gradient(160deg, #7544ed, #5b34d2);
+    border: 0;
+  }
+
+  .sidebar-note {
+    display: none;
   }
 }

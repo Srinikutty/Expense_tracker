@@ -11,22 +11,40 @@
   <link rel="stylesheet" href="navbar.css" />
 </head>
 <body>
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Primary navigation">
     <div class="navbar-inner">
-      <a href="/" class="navbar-brand">Finance Tracker</a>
+      <a href="/" class="navbar-brand"><span class="brand-mark">FT</span><span>Finance Tracker</span></a>
       <button type="button" class="navbar-toggle" id="navbar-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <div class="navbar-menu" id="navbar-menu">
-        <a href="/" class="nav-link" data-nav="dashboard">Dashboard</a>
-        <a href="/profile.html" class="nav-link" data-nav="profile">Profile</a>
-        <button type="button" class="nav-link nav-btn" id="logout-btn">Sign out</button>
+        <a href="/" class="nav-link" data-nav="dashboard"><span class="nav-icon">D</span>Dashboard</a>
+        <a href="/profile.html" class="nav-link" data-nav="profile"><span class="nav-icon">P</span>Profile</a>
+        <button type="button" class="nav-link nav-btn" id="logout-btn"><span class="nav-icon">S</span>Sign out</button>
+      </div>
+      <div class="sidebar-note">
+        <strong>Smart tracking</strong>
+        <span>Review your spending patterns every week.</span>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container dashboard-page">
+    <div class="workspace-topbar">
+      <label class="dashboard-search">
+        <span aria-hidden="true">&#128269;</span>
+        <input type="search" placeholder="Search your dashboard" aria-label="Search your dashboard" />
+      </label>
+      <div class="topbar-profile">
+        <span class="topbar-avatar">FT</span>
+        <div>
+          <strong>My finances</strong>
+          <small>Personal dashboard</small>
+        </div>
+      </div>
+    </div>
     <header class="header">
       <div class="header-content">
         <div class="header-text">
+          <span class="badge">Overview</span>
           <h1>Finance Tracker</h1>
           <p>Track income and expenses, view charts, and see your balance at a glance.</p>
         </div>
@@ -34,16 +52,16 @@
           <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="chart-illustration">
             <defs>
               <linearGradient id="chartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#2BB6A6;stop-opacity:1" />
+                <stop offset="0%" style="stop-color:#9D83FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7147F5;stop-opacity:1" />
               </linearGradient>
             </defs>
             <rect x="10" y="70" width="15" height="40" fill="url(#chartGrad)" rx="2" />
             <rect x="35" y="50" width="15" height="60" fill="url(#chartGrad)" rx="2" />
             <rect x="60" y="30" width="15" height="80" fill="url(#chartGrad)" rx="2" />
             <rect x="85" y="45" width="15" height="65" fill="url(#chartGrad)" rx="2" />
-            <circle cx="60" cy="15" r="8" fill="#2BB6A6" />
-            <line x1="60" y1="23" x2="60" y2="30" stroke="#F59E0B" stroke-width="2" />
+            <circle cx="60" cy="15" r="8" fill="#7147F5" />
+            <line x1="60" y1="23" x2="60" y2="30" stroke="#9D83FF" stroke-width="2" />
           </svg>
         </div>
       </div>

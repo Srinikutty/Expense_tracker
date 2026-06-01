@@ -11,19 +11,35 @@
   <link rel="stylesheet" href="navbar.css" />
 </head>
 <body>
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" aria-label="Primary navigation">
     <div class="navbar-inner">
-      <a href="/" class="navbar-brand">Finance Tracker</a>
+      <a href="/" class="navbar-brand"><span class="brand-mark">FT</span><span>Finance Tracker</span></a>
       <button type="button" class="navbar-toggle" id="navbar-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <div class="navbar-menu" id="navbar-menu">
-        <a href="/" class="nav-link" data-nav="dashboard">Dashboard</a>
-        <a href="/profile.html" class="nav-link" data-nav="profile">Profile</a>
-        <button type="button" class="nav-link nav-btn" id="logout-btn">Sign out</button>
+        <a href="/" class="nav-link" data-nav="dashboard"><span class="nav-icon">D</span>Dashboard</a>
+        <a href="/profile.html" class="nav-link" data-nav="profile"><span class="nav-icon">P</span>Profile</a>
+        <button type="button" class="nav-link nav-btn" id="logout-btn"><span class="nav-icon">S</span>Sign out</button>
+      </div>
+      <div class="sidebar-note">
+        <strong>Finance profile</strong>
+        <span>Keep your account details current and secure.</span>
       </div>
     </div>
   </nav>
 
   <div class="container profile-page">
+    <div class="workspace-topbar">
+      <div>
+        <span class="badge">Account</span>
+      </div>
+      <div class="topbar-profile">
+        <span class="topbar-avatar">FT</span>
+        <div>
+          <strong>My profile</strong>
+          <small>Account settings</small>
+        </div>
+      </div>
+    </div>
     <header class="header">
       <h1>Profile</h1>
       <p>Manage your photo, account details, and password.</p>
