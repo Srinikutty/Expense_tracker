@@ -8,45 +8,45 @@
 
 :root {
 
-  --bg: #F4F7F6;
+  --bg: #FFF2E6;
 
-  --bg-accent: rgba(43, 182, 166, 0.12);
+  --bg-accent: rgba(255, 219, 77, 0.16);
 
   --surface: #FFFFFF;
 
-  --surface-muted: #D6F4F0;
+  --surface-muted: #FFF2E6;
 
-  --text: #374151;
+  --text: #5C4800;
 
-  --muted: #6B7280;
+  --muted: #806A20;
 
-  --border: #D1D5DB;
+  --border: #FFE6B3;
 
-  --accent: #F59E0B;
+  --accent: #FFCC00;
 
-  --accent-hover: #D97706;
+  --accent-hover: #5C4800;
 
-  --accent-soft: #FDBA74;
+  --accent-soft: #FFDB4D;
 
-  --secondary: #2BB6A6;
+  --secondary: #FFDB4D;
 
-  --secondary-bg: rgba(43, 182, 166, 0.12);
+  --secondary-bg: rgba(255, 230, 179, 0.6);
 
-  --income: #2BB6A6;
+  --income: #FFCC00;
 
-  --income-bg: rgba(43, 182, 166, 0.12);
+  --income-bg: rgba(255, 230, 179, 0.58);
 
-  --expense: #F59E0B;
+  --expense: #5C4800;
 
-  --expense-bg: rgba(245, 158, 11, 0.12);
+  --expense-bg: rgba(255, 219, 77, 0.2);
 
-  --total: #2BB6A6;
+  --total: #5C4800;
 
-  --total-bg: rgba(43, 182, 166, 0.12);
+  --total-bg: rgba(255, 242, 230, 0.9);
 
-  --shadow: 0 14px 50px rgba(55, 65, 81, 0.08);
+  --shadow: 0 14px 50px rgba(92, 72, 0, 0.08);
 
-  --shadow-lg: 0 20px 80px rgba(55, 65, 81, 0.12);
+  --shadow-lg: 0 20px 80px rgba(92, 72, 0, 0.14);
 
   --radius: 16px;
 
@@ -80,11 +80,11 @@ body {
 
   background:
 
-    linear-gradient(rgba(244, 247, 246, 0.84), rgba(244, 247, 246, 0.84)),
+    linear-gradient(rgba(255, 242, 230, 0.84), rgba(255, 242, 230, 0.84)),
 
-    radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.12), transparent 34%),
 
-    radial-gradient(circle at bottom left, rgba(43, 182, 166, 0.12), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(255, 219, 77, 0.18), transparent 32%),
 
     url('finance-tracker-background.png') center / cover fixed,
 
@@ -158,7 +158,7 @@ body {
 .chart-illustration {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.15));
+  filter: drop-shadow(0 4px 12px rgba(255, 204, 0, 0.15));
   animation: float 3s ease-in-out infinite;
 }
 
@@ -276,7 +276,7 @@ body {
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(43, 182, 166, 0.35);
+  border-color: rgba(255, 219, 77, 0.55);
 }
 
 
@@ -467,7 +467,7 @@ select:focus {
 
   border-color: var(--accent);
 
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 219, 77, 0.24);
 
   background: var(--surface);
 
@@ -521,7 +521,7 @@ button:active {
 
   font-size: 0.95rem;
 
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+  box-shadow: 0 4px 14px rgba(92, 72, 0, 0.2);
 
 }
 
@@ -567,7 +567,7 @@ button:active {
 
 .summary-tile:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(55, 65, 81, 0.1);
+  box-shadow: 0 12px 24px rgba(92, 72, 0, 0.1);
 }
 
 .tile-icon {
@@ -587,17 +587,17 @@ button:active {
 }
 
 .summary-tile.income .tile-icon {
-  background: rgba(43, 182, 166, 0.15);
+  background: rgba(255, 230, 179, 0.72);
   color: var(--income);
 }
 
 .summary-tile.expense .tile-icon {
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(255, 219, 77, 0.32);
   color: var(--expense);
 }
 
 .summary-tile.total .tile-icon {
-  background: rgba(43, 182, 166, 0.15);
+  background: rgba(255, 230, 179, 0.72);
   color: var(--total);
 }
 
@@ -613,7 +613,7 @@ button:active {
 
   background: var(--income-bg);
 
-  border-color: rgba(5, 150, 105, 0.2);
+  border-color: rgba(255, 204, 0, 0.22);
 
 }
 
@@ -623,7 +623,7 @@ button:active {
 
   background: var(--expense-bg);
 
-  border-color: rgba(220, 38, 38, 0.2);
+  border-color: rgba(255, 219, 77, 0.34);
 
 }
 
@@ -633,7 +633,7 @@ button:active {
 
   background: var(--total-bg);
 
-  border-color: rgba(37, 99, 235, 0.2);
+  border-color: rgba(92, 72, 0, 0.2);
 
 }
 
@@ -1062,7 +1062,7 @@ button:active {
 
 .expense-item:hover {
   transform: translateX(4px);
-  box-shadow: 0 8px 18px rgba(55, 65, 81, 0.08);
+  box-shadow: 0 8px 18px rgba(92, 72, 0, 0.08);
 }
 
 
@@ -1219,7 +1219,7 @@ button:active {
 
   background: var(--expense-bg);
 
-  border-color: rgba(220, 38, 38, 0.3);
+  border-color: rgba(92, 72, 0, 0.3);
 
 }
 
@@ -1662,36 +1662,36 @@ button:active {
 
 }
 
-/* Violet dashboard theme */
+/* Yellow finance theme: 80% light surfaces, 15% cream support, 5% strong accents. */
 :root {
-  --bg: #eeedff;
-  --bg-accent: rgba(111, 76, 255, 0.12);
+  --bg: #fff2e6;
+  --bg-accent: rgba(255, 219, 77, 0.16);
   --surface: rgba(255, 255, 255, 0.94);
-  --surface-muted: #f5f3ff;
-  --text: #272452;
-  --muted: #817da3;
-  --border: rgba(111, 76, 255, 0.12);
-  --accent: #7147f5;
-  --accent-hover: #5b35dc;
-  --accent-soft: #9d83ff;
-  --secondary: #a58bff;
-  --secondary-bg: rgba(113, 71, 245, 0.1);
-  --income: #7147f5;
-  --income-bg: rgba(113, 71, 245, 0.1);
-  --expense: #f27b9b;
-  --expense-bg: rgba(242, 123, 155, 0.12);
-  --total: #4936b7;
-  --total-bg: rgba(73, 54, 183, 0.1);
-  --shadow: 0 12px 30px rgba(77, 61, 173, 0.08);
-  --shadow-lg: 0 18px 42px rgba(77, 61, 173, 0.14);
+  --surface-muted: #fff2e6;
+  --text: #5c4800;
+  --muted: #806a20;
+  --border: rgba(255, 219, 77, 0.28);
+  --accent: #ffcc00;
+  --accent-hover: #5c4800;
+  --accent-soft: #ffdb4d;
+  --secondary: #ffdb4d;
+  --secondary-bg: rgba(255, 230, 179, 0.6);
+  --income: #ffcc00;
+  --income-bg: rgba(255, 230, 179, 0.58);
+  --expense: #5c4800;
+  --expense-bg: rgba(255, 219, 77, 0.2);
+  --total: #5c4800;
+  --total-bg: rgba(255, 242, 230, 0.9);
+  --shadow: 0 12px 30px rgba(92, 72, 0, 0.08);
+  --shadow-lg: 0 18px 42px rgba(92, 72, 0, 0.14);
 }
 
 html,
 body {
   background:
     radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.88), transparent 24%),
-    radial-gradient(circle at 92% 88%, rgba(190, 180, 255, 0.38), transparent 28%),
-    #eeedff;
+    radial-gradient(circle at 92% 88%, rgba(255, 230, 179, 0.74), transparent 28%),
+    #fff2e6;
 }
 
 body {
@@ -1760,12 +1760,12 @@ body {
   width: 40px;
   height: 40px;
   place-items: center;
-  color: #fff;
+  color: #5c4800;
   font-size: 0.75rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #a17bff, #6841ed);
+  background: linear-gradient(135deg, #ffdb4d, #ffcc00);
   border-radius: 50%;
-  box-shadow: 0 8px 18px rgba(113, 71, 245, 0.24);
+  box-shadow: 0 8px 18px rgba(92, 72, 0, 0.2);
 }
 
 .header {
@@ -1773,7 +1773,7 @@ body {
 }
 
 .header h1 {
-  color: #332a75;
+  color: #5c4800;
 }
 
 .badge {
@@ -1787,16 +1787,17 @@ body {
 }
 
 .card:hover {
-  border-color: rgba(113, 71, 245, 0.26);
+  border-color: rgba(255, 219, 77, 0.55);
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #8057ff, #6338e7);
-  box-shadow: 0 8px 20px rgba(113, 71, 245, 0.24);
+  color: #5c4800;
+  background: linear-gradient(135deg, #ffcc00, #ffdb4d);
+  box-shadow: 0 8px 20px rgba(92, 72, 0, 0.2);
 }
 
 .primary-btn:hover {
-  background: linear-gradient(135deg, #7448f3, #562bd3);
+  background: linear-gradient(135deg, #ffdb4d, #ffcc00);
 }
 
 .type-option input:checked + span {
@@ -1805,7 +1806,7 @@ body {
 
 .summary-tile {
   border-color: transparent;
-  background: #f8f7ff;
+  background: #fff2e6;
 }
 
 .summary-tile.income,
@@ -1817,8 +1818,8 @@ body {
 .summary-tile.income .tile-icon,
 .summary-tile.expense .tile-icon,
 .summary-tile.total .tile-icon {
-  color: #fff;
-  background: linear-gradient(135deg, #9c80ff, #6840ed);
+  color: #5c4800;
+  background: linear-gradient(135deg, #ffdb4d, #ffcc00);
 }
 
 .summary-tile.expense strong {
@@ -1837,7 +1838,7 @@ body {
 .monthly-detail,
 .expense-item,
 .no-items {
-  background: #f8f7ff;
+  background: #fff2e6;
 }
 
 .profile-page {

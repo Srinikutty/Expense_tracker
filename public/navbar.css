@@ -320,11 +320,11 @@ body:has(.navbar) {
   right: auto;
   width: 188px;
   padding: 20px 14px;
-  color: #fff;
-  background: linear-gradient(160deg, #8c4df9 0%, #6b3de9 48%, #5831d6 100%);
+  color: #5c4800;
+  background: linear-gradient(160deg, #ffcc00 0%, #ffdb4d 48%, #ffe6b3 100%);
   border: 0;
   border-radius: 24px;
-  box-shadow: 0 22px 48px rgba(95, 58, 210, 0.26);
+  box-shadow: 0 22px 48px rgba(92, 72, 0, 0.22);
   animation: sidebarEnter 0.55s ease-out both;
 }
 
@@ -342,12 +342,12 @@ body:has(.navbar) {
   align-items: center;
   display: flex;
   padding: 4px 6px 22px;
-  color: #fff;
+  color: #5c4800;
   font-size: 0.93rem;
 }
 
 .navbar-brand:hover {
-  color: #fff;
+  color: #5c4800;
 }
 
 .brand-mark {
@@ -355,7 +355,7 @@ body:has(.navbar) {
   width: 34px;
   height: 34px;
   place-items: center;
-  color: #7147f5;
+  color: #5c4800;
   font-size: 0.7rem;
   font-weight: 700;
   background: #fff;
@@ -372,7 +372,7 @@ body:has(.navbar) {
   width: 100%;
   justify-content: flex-start;
   padding: 11px 10px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(92, 72, 0, 0.82);
   font-size: 0.8rem;
 }
 
@@ -381,18 +381,18 @@ body:has(.navbar) {
   width: 20px;
   height: 20px;
   place-items: center;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(92, 72, 0, 0.92);
   font-size: 0.62rem;
   font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(92, 72, 0, 0.2);
   border-radius: 7px;
 }
 
 .nav-link:hover,
 .nav-link.active,
 .nav-link.nav-btn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.16);
+  color: #5c4800;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .sidebar-note {
@@ -400,9 +400,9 @@ body:has(.navbar) {
   gap: 7px;
   margin-top: auto;
   padding: 14px 12px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #5c4800;
+  background: rgba(255, 255, 255, 0.36);
+  border: 1px solid rgba(255, 255, 255, 0.56);
   border-radius: 16px;
 }
 
@@ -411,7 +411,7 @@ body:has(.navbar) {
 }
 
 .sidebar-note span {
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(92, 72, 0, 0.76);
   font-size: 0.68rem;
   line-height: 1.45;
 }
@@ -461,14 +461,14 @@ body:has(.navbar) {
     min-width: 58px;
     height: 38px;
     place-items: center;
-    color: #fff;
+    color: #5c4800;
     font-size: 0.72rem;
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.42);
+    border-color: rgba(92, 72, 0, 0.18);
   }
 
   .navbar-menu {
-    background: linear-gradient(160deg, #7544ed, #5b34d2);
+    background: linear-gradient(160deg, #ffcc00, #ffdb4d);
     border: 0;
   }
 
