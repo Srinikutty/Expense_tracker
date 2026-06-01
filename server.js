@@ -20,6 +20,14 @@ function agentLog(location, message, data, hypothesisId) {
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+let initialized = false;
+
+async function initApp() {
+  if (!initialized) {
+    await db.init();
+    initialized = true;
+  }
+}
 
 async function adoptLegacyExpensesForUser(userId) {
   // Pre-auth rows used empty user_id; reclaim any non-UUID placeholder owners for this account.
@@ -170,7 +178,7 @@ async function start() {
   }
 
   try {
-    await db.init();
+    await initApp();
 
     const server = app.listen(PORT, () => {
       console.log(`Expense tracker running on http://localhost:${PORT}`);
@@ -200,4 +208,8 @@ async function start() {
   }
 }
 
-start();
+if (require.main === module) {
+  start();
+}
+
+module.exports = { app, initApp };
