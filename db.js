@@ -1,7 +1,6 @@
 // DB helper with MySQL primary and SQLite fallback when MySQL isn't available.
 const mysql = require('mysql2/promise');
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
 
 const DB_HOST = process.env.DB_HOST || 'localhost';
@@ -9,17 +8,6 @@ const DB_USER = process.env.DB_USER || 'root';
 const DB_PASSWORD = process.env.DB_PASSWORD || '';
 const DB_NAME = process.env.DB_NAME || 'expense_tracker_db';
 const DB_PORT = Number(process.env.DB_PORT || 3306);
-
-function getDataDir() {
-  const defaultDataDir = path.join(__dirname, 'data');
-  if (process.env.DATA_DIR) {
-    return process.env.DATA_DIR;
-  }
-  if (process.env.VERCEL || process.env.NOW_BUILDER || process.env.NODE_ENV === 'production') {
-    return path.join(os.tmpdir(), 'expense_tracker');
-  }
-  return defaultDataDir;
-}
 
 let mode = 'mysql';
 let pool = null;
@@ -70,8 +58,8 @@ async function initMySQL() {
 async function initSQLite() {
   const sqlite3 = require('sqlite3').verbose();
   const Database = sqlite3.Database;
-  const dataDir = getDataDir();
-  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+  const dataDir = path.join(__dirname, 'data');
+  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
   const dbPath = path.join(dataDir, 'expenses.sqlite');
   sqliteDb = new Database(dbPath);
 
