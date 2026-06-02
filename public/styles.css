@@ -8,51 +8,50 @@
 
 :root {
 
-  --bg: #FFF2E6;
+  /* Base palette: red / white / grey / black */
+  --red-500: #E11D48;
+  --white: #FFFFFF;
+  --grey-100: #F3F4F6;
+  --grey-300: #D1D5DB;
+  --grey-600: #4B5563;
+  --black: #0B0B0F;
 
-  --bg-accent: rgba(255, 219, 77, 0.16);
+  /* Theme mapping (used throughout the app) */
+  --bg: #F3F4F6;
+  --bg-accent: rgba(225, 29, 72, 0.14);
 
   --surface: #FFFFFF;
+  --surface-muted: #F3F4F6;
 
-  --surface-muted: #FFF2E6;
+  --text: #0B0B0F;
+  --muted: #4B5563;
 
-  --text: #5C4800;
+  --border: rgba(209, 213, 219, 0.9);
 
-  --muted: #806A20;
+  --accent: #E11D48;
+  --accent-hover: #B01236;
+  --accent-soft: rgba(225, 29, 72, 0.18);
 
-  --border: #FFE6B3;
+  /* Keep semantic variables so existing CSS/JS continue working */
+  --secondary: #E11D48;
+  --secondary-bg: rgba(225, 29, 72, 0.12);
 
-  --accent: #FFCC00;
+  --income: #0B0B0F;
+  --income-bg: rgba(11, 11, 15, 0.06);
 
-  --accent-hover: #5C4800;
+  --expense: #E11D48;
+  --expense-bg: rgba(225, 29, 72, 0.14);
 
-  --accent-soft: #FFDB4D;
+  --total: #0B0B0F;
+  --total-bg: rgba(0, 0, 0, 0.04);
 
-  --secondary: #FFDB4D;
-
-  --secondary-bg: rgba(255, 230, 179, 0.6);
-
-  --income: #FFCC00;
-
-  --income-bg: rgba(255, 230, 179, 0.58);
-
-  --expense: #5C4800;
-
-  --expense-bg: rgba(255, 219, 77, 0.2);
-
-  --total: #5C4800;
-
-  --total-bg: rgba(255, 242, 230, 0.9);
-
-  --shadow: 0 14px 50px rgba(92, 72, 0, 0.08);
-
-  --shadow-lg: 0 20px 80px rgba(92, 72, 0, 0.14);
+  --shadow: 0 14px 50px rgba(11, 11, 15, 0.08);
+  --shadow-lg: 0 20px 80px rgba(11, 11, 15, 0.14);
 
   --radius: 16px;
-
   --radius-lg: 20px;
-
 }
+
 
 
 
@@ -158,9 +157,10 @@ body {
 .chart-illustration {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 4px 12px rgba(255, 204, 0, 0.15));
+  filter: drop-shadow(0 4px 12px rgba(225, 29, 72, 0.18));
   animation: float 3s ease-in-out infinite;
 }
+
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -1662,41 +1662,19 @@ button:active {
 
 }
 
-/* Yellow finance theme: 80% light surfaces, 15% cream support, 5% strong accents. */
-:root {
-  --bg: #fff2e6;
-  --bg-accent: rgba(255, 219, 77, 0.16);
-  --surface: rgba(255, 255, 255, 0.94);
-  --surface-muted: #fff2e6;
-  --text: #5c4800;
-  --muted: #806a20;
-  --border: rgba(255, 219, 77, 0.28);
-  --accent: #ffcc00;
-  --accent-hover: #5c4800;
-  --accent-soft: #ffdb4d;
-  --secondary: #ffdb4d;
-  --secondary-bg: rgba(255, 230, 179, 0.6);
-  --income: #ffcc00;
-  --income-bg: rgba(255, 230, 179, 0.58);
-  --expense: #5c4800;
-  --expense-bg: rgba(255, 219, 77, 0.2);
-  --total: #5c4800;
-  --total-bg: rgba(255, 242, 230, 0.9);
-  --shadow: 0 12px 30px rgba(92, 72, 0, 0.08);
-  --shadow-lg: 0 18px 42px rgba(92, 72, 0, 0.14);
-}
-
+/* Red/white/grey/black theme backgrounds (maps to the palette variables above). */
 html,
 body {
   background:
-    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.88), transparent 24%),
-    radial-gradient(circle at 92% 88%, rgba(255, 230, 179, 0.74), transparent 28%),
-    #fff2e6;
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.95), transparent 24%),
+    radial-gradient(circle at 92% 88%, rgba(225, 29, 72, 0.12), transparent 28%),
+    var(--bg);
 }
 
 body {
   padding: 28px 28px 48px 244px;
 }
+
 
 .container {
   max-width: 1380px;
